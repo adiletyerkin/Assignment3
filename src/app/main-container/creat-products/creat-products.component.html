@@ -1,0 +1,32 @@
+<div>
+  <h2>Create product: </h2>
+
+  <form (ngSubmit)="addingInfo()">
+    <div class="form-group">
+      <label>Product Name: </label>
+      <input name = "Name" [(ngModel)]="Name" id="date" type="text" class="form-control"  aria-describedby="emailHelp" placeholder="Name" >
+      <span>Name is {{Name}}</span>
+    </div>
+
+    <div class="form-group">
+      <label>Description:</label>
+      <input name = "Description" [(ngModel)]="Description" id="distance" type="text" class="form-control"  aria-describedby="emailHelp" placeholder="About">
+      <span>Description: {{Description}}</span>
+    </div>
+
+    <div class="form-group">
+      <label>Quantity:</label>
+      <input name = "Quantity" [(ngModel)]="Quantity" id="time" type="number" class="form-control"  aria-describedby="emailHelp" placeholder="0">
+      <span>Quantity: {{Quantity}}</span>
+    </div>
+
+    <div class="form-group">
+      <label>Price:</label>
+      <input name = "Price" [(ngModel)]="Price" id="time" type="number" class="form-control"  aria-describedby="emailHelp" placeholder="0">
+      <span>Price: {{Price}}</span>
+    </div>
+
+    <button type="submit" class="btn btn-primary" >Save</button>
+  </form>
+
+</div>
