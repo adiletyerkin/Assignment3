@@ -21,6 +21,8 @@ import { NewsComponent } from './news/news.component';
 import { AddressesComponent } from './addresses/addresses.component';
 import { BrandShopsComponent } from './addresses/brand-shops/brand-shops.component';
 import { HistoryComponent } from './history/history.component';
+import { HomeComponent } from './home/home.component';
+import { ProductsDetailsComponent } from './products/products-details/products-details.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,9 @@ import { HistoryComponent } from './history/history.component';
     NewsComponent,
     AddressesComponent,
     BrandShopsComponent,
-    HistoryComponent
+    HistoryComponent,
+    HomeComponent,
+    ProductsDetailsComponent
   ],
   imports: [
     BrowserModule,

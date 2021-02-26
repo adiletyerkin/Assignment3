@@ -15,27 +15,27 @@ import { NewsComponent } from './news/news.component';
 import { AddressesComponent } from './addresses/addresses.component';
 import { BrandShopsComponent } from './addresses/brand-shops/brand-shops.component';
 import { HistoryComponent } from './history/history.component';
+import { HomeComponent } from './home/home.component';
+import { ProductsDetailsComponent } from './products/products-details/products-details.component';
+
 
 export const routes: Routes = [
-  {path: 'ProductsComponent', component: ProductsComponent,
-    canActivate: [NoveltiesComponent, GiftsComponent],
-  children: [
-    {path: 'NoveltiesComponent', component: NoveltiesComponent},
-    {path: 'GiftsComponent', component: GiftsComponent}
-  ]},
-  {path: 'AboutComponent', component: AboutComponent,
-  canActivate: [OfficialsComponent, AwardsComponent],
-  children: [
-    {path: 'OfficialsComponent', component: OfficialsComponent},
-    {path: 'AwardsComponent', component: AwardsComponent}
-  ]},
+  {path: 'ProductsComponent', component: ProductsComponent},
+  {path: 'home', component: HomeComponent},
+  {path: 'NoveltiesComponent', component: NoveltiesComponent},
+  {path: 'GiftsComponent', component: GiftsComponent},
+  {path: 'AboutComponent', component: AboutComponent},
+  {path: 'OfficialsComponent', component: OfficialsComponent},
+  {path: 'AwardsComponent', component: AwardsComponent},
   {path: 'NewsComponent', component: NewsComponent},
-  {path: 'AddressesComponent', component: AddressesComponent,
-  canActivate : [BrandShopsComponent],
-  children: [
-    {path: 'BrandShopsComponent', component: BrandShopsComponent},
-  ]},
+  {path: 'AddressesComponent', component: AddressesComponent},
+  {path: 'BrandShopsComponent', component: BrandShopsComponent},
   {path: 'HistoryComponent', component: HistoryComponent},
-  {path: '', redirectTo: '/', pathMatch: 'full'},
+  {path: '', redirectTo: 'home', pathMatch: 'full'},
+  {path: 'CreatedProductsComponent', component: CreatedProductsComponent,
+    canActivate: [ProductsDetailsComponent],
+    children: [
+      {path: 'detail/:id', component: ProductsDetailsComponent}
+    ]}
   // {path: '**', component: ErrorComponent}
 ];
