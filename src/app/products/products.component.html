@@ -1,1 +1,28 @@
-<p>products works!</p>
+
+
+<!--<div *ngFor="let i of products" class='product'>-->
+
+<!--  <td>{{i.id}}</td>-->
+<!--  <td>{{i.Name}}</td>-->
+
+
+<!--</div>-->
+<div style="margin-bottom: 35%; padding:20px">
+
+<div *ngFor="let i of products" class="col-sm-6 col-md-4">
+  <a routerLink="ProductsComponent" class="category-item">
+    <div class="image-container">
+      <img class="image" src="{{i.Link}}" alt="{{i.id}}">
+    </div>
+    <h4 class="title"><span>{{i.Name}}</span></h4>
+  </a>
+</div>
+
+</div>
+
+<!--<tr *ngFor="let i of products">-->
+<!--  <td>{{i.id}}</td>-->
+<!--  <td>{{i.Name}}</td>-->
+
+<!--</tr>-->
+
