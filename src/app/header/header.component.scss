@@ -12,3 +12,33 @@
 .header-top-logo{
   background-color: chocolate;
 }
+
+.slogan{
+  line-height: 1.42857143;
+  font-family: 'Optima',serif;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+  box-sizing: inherit;
+  color: #fff;
+  text-align: center;
+  margin-top: -25px;
+  position: relative;
+  z-index: 101;
+  font-size: 32px;
+  transform: translate3d(0,0,0);
+}
+
+.subslogan {
+  line-height: 1.42857143;
+  font-family: 'Optima', serif;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+  box-sizing: inherit;
+  color: #fff;
+  text-align: center;
+  font-size: 18px;
+  padding: 10px 0 30px;
+  position: relative;
+  z-index: 101;
+  transform: translate3d(0, 0, 0);
+}

@@ -19,7 +19,8 @@
     <td>{{i.Name}}</td>
     <td>{{i.Description}}</td>
     <td>{{i.Quantity}}</td>
-    <td>{{i.Price}}</td>
+    <td [ngStyle]="{'color':getColor(i.Price)}">
+     {{i.Price}} </td>
     <td>
       <a>Edit </a>
       <a>Delete</a>
@@ -28,4 +29,5 @@
   </tr>
   </tbody>
 </table>
+
 

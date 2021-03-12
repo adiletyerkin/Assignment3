@@ -8,6 +8,25 @@
       <span>Name is {{Name}}</span>
     </div>
 
+      <label>Product Type: </label>
+<!--     <input name = "Type" [(ngModel)]="Type" id="date" type="" class="form-control"  aria-describedby="emailHelp" placeholder="Type" >-->
+      <div class="form-group">
+        <select class="form-select" aria-label="Default select example">
+          <option selected>Menu</option>
+          <option>Candies</option>
+          <option>Caramel</option>
+          <option>Toffee(Iris)</option>
+          <option>Chocolate</option>
+          <option>Biscuits</option>
+          <option>Waffles</option>
+          <option>Cocoa powder/ semi products</option>
+          <option>Fruit jelly(Marmelad)</option>
+          <option>Caramel</option>
+        </select>
+      </div>
+      <span>Type is {{Type}}</span>
+<!--    </div>-->
+
     <div class="form-group">
       <label>Description:</label>
       <input name = "Description" [(ngModel)]="Description" id="distance" type="text" class="form-control"  aria-describedby="emailHelp" placeholder="About">
@@ -16,13 +35,13 @@
 
     <div class="form-group">
       <label>Quantity:</label>
-      <input name = "Quantity" [(ngModel)]="Quantity" id="time" type="number" class="form-control"  aria-describedby="emailHelp" placeholder="0">
+      <input name = "Quantity" [(ngModel)]="Quantity"  type="number" class="form-control"  aria-describedby="emailHelp" placeholder="0">
       <span>Quantity: {{Quantity}}</span>
     </div>
 
     <div class="form-group">
       <label>Price:</label>
-      <input name = "Price" [(ngModel)]="Price" id="time" type="number" class="form-control"  aria-describedby="emailHelp" placeholder="0">
+      <input name = "Price" [(ngModel)]="Price" type="number" class="form-control"  aria-describedby="emailHelp" placeholder="0">
       <span>Price: {{Price}}</span>
     </div>
 
@@ -30,3 +49,22 @@
   </form>
 
 </div>
+
+
+
+
+<!-- <ul *ngFor="let product of products">-->
+<!--  <li [ngClass]="{-->
+<!--    'text-success':product.price <= 100,-->
+<!--    'text-primary':product.price > 100 && product.price <= 200,-->
+<!--    'text-danger':product.price > 200-->
+<!--  }">{{ product.name }} ({{ product.price }})-->
+<!--  </li>-->
+<!--</ul>-->
+
+
+<!--<ul *ngFor="let product of products">-->
+<!--<li [ngStyle]="{'color':getColor(product.price)}">-->
+<!--{{ product.name }} - ({{ product.price }})-->
+<!--</li>-->
+<!--</ul>-->

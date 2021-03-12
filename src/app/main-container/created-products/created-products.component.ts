@@ -9,7 +9,19 @@ export class CreatedProductsComponent implements OnInit {
   @Input() infoObj: any;
   constructor() { }
 
+  getColor(price: number) {
+    if (price<=100) {
+      return 'green';
+    } else if (price <= 200) {
+      return 'blue';
+    } else {
+      return 'red';
+    }
+  }
+
+
   ngOnInit(): void {
   }
 
 }
+
