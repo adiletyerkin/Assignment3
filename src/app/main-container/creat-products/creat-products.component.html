@@ -14,24 +14,60 @@
       <span>id: {{id}}</span>
     </div>
 
-      <label>Product Type: </label>
-<!--     <input name = "Type" [(ngModel)]="Type" id="date" type="" class="form-control"  aria-describedby="emailHelp" placeholder="Type" >-->
-      <div class="form-group">
-        <select class="form-select" aria-label="Default select example">
-          <option selected>Menu</option>
-          <option>Candies</option>
-          <option>Caramel</option>
-          <option>Toffee(Iris)</option>
-          <option>Chocolate</option>
-          <option>Biscuits</option>
-          <option>Waffles</option>
-          <option>Cocoa powder/ semi products</option>
-          <option>Fruit jelly(Marmelad)</option>
-          <option>Caramel</option>
+<!--      <label>Product Type: </label>-->
+<!--&lt;!&ndash;     <input name = "Type" [(ngModel)]="Type" id="date" type="" class="form-control"  aria-describedby="emailHelp" placeholder="Type" >&ndash;&gt;-->
+<!--      <div class="form-group">-->
+<!--        <select class="form-select" aria-label="Default select example">-->
+<!--          <option selected>Menu</option>-->
+<!--          <option value="Candies">Candies</option>-->
+<!--          <option value="Caramel">Caramel</option>-->
+<!--          <option value="Toffee(Iris)">Toffee(Iris)</option>-->
+<!--          <option value="Chocolate">Chocolate</option>-->
+<!--          <option value="Biscuits">Biscuits</option>-->
+<!--          <option value="Waffles">Waffles</option>-->
+<!--          <option value="Cocoa powder/ semi products">Cocoa powder/ semi products</option>-->
+<!--          <option value="Fruit jelly(Marmelad)">Fruit jelly(Marmelad)</option>-->
+<!--          <option value="Caramel">Caramel</option>-->
+<!--        </select>-->
+<!--      </div>-->
+<!--      <span>Type is {{type}}</span>-->
+    <div class="form-group">
+        <label>Product Type: </label>
+        <br>
+        <select [(ngModel)]="type" name="first">
+          <option *ngFor="let o of options">
+            {{o.name}}
+          </option>
         </select>
-      </div>
-      <span>Type is {{type}}</span>
+        <br>
+        <span>Type is {{type}}</span>
+    </div>
+
 <!--    </div>-->
+
+<!--    <label>Product Type: </label>-->
+<!--      <mat-form-field appearance="fill">-->
+<!--        <mat-label>Favorite food</mat-label>-->
+<!--        <mat-select [(ngModel)]="selectedValue" name="food">-->
+<!--          <mat-option *ngFor="let type of typeval" [value]="type.value">-->
+<!--            {{type.viewValue}}-->
+<!--          </mat-option>-->
+<!--        </mat-select>-->
+<!--      </mat-form-field>-->
+<!--      <p> Selected food: {{selectedValue}} </p>-->
+
+<!--      <mat-form-field appearance="fill">-->
+<!--        <mat-label>Favorite car</mat-label>-->
+<!--        <select matNativeControl [(ngModel)]="selectedCar" name="car">-->
+<!--          <option value="" selected></option>-->
+<!--          <option *ngFor="let car of cars" [value]="car.value">-->
+<!--            {{car.viewValue}}-->
+<!--          </option>-->
+<!--        </select>-->
+<!--      </mat-form-field>-->
+<!--      <p> Selected car: {{selectedCar}} </p>-->
+
+
 
     <div class="form-group">
       <label>Description:</label>

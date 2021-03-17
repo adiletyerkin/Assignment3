@@ -1,4 +1,4 @@
-
+<div class="container">
 <h1 class="title-main">
   <span>Candies
   </span>
@@ -6,8 +6,8 @@
 
 <div class="row">
 
-  <div *ngFor="let product of productList" class="col-sm-6">
-    <div   class="card" style="width: 18rem;">
+  <div *ngFor="let product of productList"  class="col-sm-3">
+    <div  class="card" style="width: 18rem;">
       <img class="card-img-top" src="{{product.img}}" alt="Card image cap">
       <ul class="list-group list-group-flush">
         <li class="list-group-item"> <h5 class="card-title">{{product.name}}</h5> </li>
@@ -15,7 +15,7 @@
         <li class="list-group-item">{{product.id | currency: "KZ"}} </li>
       </ul>
       <div class="card-body">
-        <a href="{{product.more}}" class="card-link">more</a>
+        <a  class="card-link">more</a>
       </div>
     </div>
 
@@ -23,5 +23,5 @@
 
 </div>
 
-
+</div>
 

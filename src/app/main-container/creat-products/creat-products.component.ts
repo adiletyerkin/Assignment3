@@ -9,6 +9,17 @@ import {ProductsService} from '../../services/products.service';
 })
 export class CreatProductsComponent implements OnInit {
 
+  options = [
+    { name: 'Candies', value: 'Candies' },
+    { name: 'Caramel', value: 'Caramel' },
+    { name: 'Toffee(Iris)', value: 'Toffee(Iris)' },
+    { name: 'Chocolate', value: 'Chocolate' },
+    { name: 'Biscuits', value: 'Biscuits' },
+    { name: 'Waffles', value: 'Waffles' },
+    { name: 'Cocoa powder/ semi products', value: 'Cocoa powder/ semi products' },
+    { name: 'Fruit jelly(Marmelad)', value: 'Fruit jelly(Marmelad)' }
+  ];
+
   name = '';
   type = '';
   description = '';
