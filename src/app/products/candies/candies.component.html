@@ -5,17 +5,24 @@
 </h1>
 
 <div class="row">
+
   <div class="col-sm-6">
+
     <div class="card" style="width: 18rem;">
-      <img class="card-img-top" src="..." alt="Card image cap">
+      <img class="card-img-top" src="{{list.img}}" alt="Card image cap">
       <ul class="list-group list-group-flush">
-        <li class="list-group-item"> <h5 class="card-title">Name cocklade</h5> </li>
-        <li class="list-group-item">by weight</li>
-        <li class="list-group-item">ID</li>
+        <li class="list-group-item"> <h5 class="card-title">{{list.name}}</h5> </li>
+        <li class="list-group-item">{{list.byweightornot}}</li>
+        <li class="list-group-item">{{list.id}}</li>
       </ul>
       <div class="card-body">
-        <a href="#" class="card-link">more</a>
+        <a href="{{list.more}}" class="card-link">more</a>
       </div>
     </div>
+
   </div>
+
 </div>
+
+
+

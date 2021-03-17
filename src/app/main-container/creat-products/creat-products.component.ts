@@ -24,7 +24,9 @@ export class CreatProductsComponent implements OnInit {
   }
 
   addingInfo(): void {
+    // tslint:disable-next-line:max-line-length
     this.myeventEmit.emit({Name: this.Name, Type: this.Type, Description: this.Description, Quantity: this.Quantity, Price: this.Price, id: this.id });
+    // tslint:disable-next-line:max-line-length
     console.log({Name: this.Name, Type: this.Type, Description: this.Description, Quantity: this.Quantity, Price: this.Price, id: this.id });
     this.doDefaultValue();
   }

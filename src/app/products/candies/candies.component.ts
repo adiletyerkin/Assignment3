@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import {Component, Input, OnInit} from '@angular/core';
+import {ProductsService} from '../../services/products.service';
+import {Products} from '../../services/products';
+
 
 @Component({
   selector: 'app-candies',
@@ -7,17 +9,18 @@ import {ActivatedRoute} from '@angular/router';
   styleUrls: ['./candies.component.scss']
 })
 export class CandiesComponent implements OnInit {
+  @Input() list: any;
 
-  id: string | null | undefined;
-
-  constructor(private activatedRouter: ActivatedRoute) { }
-
+  constructor() {
+  }
+  // productList = this.productsService.getProducts();
   // tslint:disable-next-line:typedef
   ngOnInit() {
-    this.activatedRouter.paramMap.subscribe(params => {
-      console.log('activatedRouter.params: ', params);
-      this.id = params.get('id');
-    });
   }
+  // tslint:disable-next-line:typedef
+  // addProduct(product: any){
+  //   this.productList.push(product);
+  // }
+
 
 }

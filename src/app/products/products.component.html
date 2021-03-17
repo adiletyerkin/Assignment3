@@ -25,7 +25,7 @@
 <div style="margin-bottom: 35%; padding:20px">
 
 <div *ngFor="let i of products" class="col-sm-6 col-md-4">
-  <a [routerLink]="['detail', i.id]" class="category-item">
+  <a [routerLink]="[i.href]" class="category-item">
     <div class="image-container">
       <img class="image" src="{{i.Link}}" alt="{{i.id}}">
     </div>
