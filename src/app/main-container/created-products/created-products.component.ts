@@ -9,8 +9,9 @@ export class CreatedProductsComponent implements OnInit {
   @Input() infoObj: any;
   constructor() { }
 
+  // tslint:disable-next-line:typedef
   getColor(price: number) {
-    if (price<=1000) {
+    if (price <= 1000) {
       return 'green';
     } else if (price <= 3000) {
       return 'blue';

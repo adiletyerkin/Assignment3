@@ -7,11 +7,11 @@ export class Products{
   description: string;
   img: string;
   byweightornot: string;
-  more: string;
+
 
 
 // tslint:disable-next-line:max-line-length
-constructor(id: number, name: string, type: string, typedict: string, byweightornot: string, price: number, description: string, img: string,  more: string) {
+constructor(id: number, name: string, type: string, typedict: string, byweightornot: string, price: number, description: string, img: string) {
   this.id = id;
   this.name = name;
   this.type = type;
@@ -20,7 +20,6 @@ constructor(id: number, name: string, type: string, typedict: string, byweightor
   this.price = price;
   this.description = description;
   this.img = img;
-  this.more = more;
 }
 
 }

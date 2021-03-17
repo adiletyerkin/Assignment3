@@ -4,8 +4,14 @@
   <form (ngSubmit)="addingInfo()">
     <div class="form-group">
       <label>Product Name: </label>
-      <input name = "Name" [(ngModel)]="Name" id="date" type="text" class="form-control"  aria-describedby="emailHelp" placeholder="Name" >
-      <span>Name is {{Name}}</span>
+      <input name = "Name" [(ngModel)]="name" id="date" type="text" class="form-control"  aria-describedby="emailHelp" placeholder="Name" >
+      <span>Name is {{name}}</span>
+    </div>
+
+    <div class="form-group">
+      <label>id:</label>
+      <input name = "id" [(ngModel)]="id" type="number" class="form-control"  aria-describedby="emailHelp" placeholder="id">
+      <span>id: {{id}}</span>
     </div>
 
       <label>Product Type: </label>
@@ -24,32 +30,43 @@
           <option>Caramel</option>
         </select>
       </div>
-      <span>Type is {{Type}}</span>
+      <span>Type is {{type}}</span>
 <!--    </div>-->
 
     <div class="form-group">
       <label>Description:</label>
-      <input name = "Description" [(ngModel)]="Description" id="distance" type="text" class="form-control"  aria-describedby="emailHelp" placeholder="About">
-      <span>Description: {{Description}}</span>
+      <input name = "Description" [(ngModel)]="description" id="distance" type="text" class="form-control"  aria-describedby="emailHelp" placeholder="About">
+      <span>Description: {{description}}</span>
     </div>
 
     <div class="form-group">
-      <label>Quantity:</label>
-      <input name = "Quantity" [(ngModel)]="Quantity"  type="number" class="form-control"  aria-describedby="emailHelp" placeholder="0">
-      <span>Quantity: {{Quantity}}</span>
+      <label>typedict:</label>
+      <input name = "typedict" [(ngModel)]="typedict"  type="text" class="form-control"  aria-describedby="emailHelp" placeholder="">
+      <span>typedict: {{typedict}}</span>
     </div>
 
     <div class="form-group">
       <label>Price:</label>
-      <input name = "Price" [(ngModel)]="Price" type="number" class="form-control"  aria-describedby="emailHelp" placeholder="0">
-      <span>Price: {{Price}}</span>
+      <input name = "Price" [(ngModel)]="price" type="number" class="form-control"  aria-describedby="emailHelp" placeholder="0">
+      <span>Price: {{price}}</span>
+    </div>
+
+    <div class="form-group">
+      <label>IMG source:</label>
+      <input name = "img" [(ngModel)]="img"  type="text" class="form-control"  aria-describedby="emailHelp" placeholder="img source">
+      <span>img source: {{img}}</span>
+    </div>
+
+    <div class="form-group">
+      <label>By weight or box:</label>
+      <input name = "byweightornot" [(ngModel)]="byweightornot"  type="text" class="form-control"  aria-describedby="emailHelp" placeholder="img source">
+      <span>by weight or box: {{byweightornot}}</span>
     </div>
 
     <button (click)="addProduct()" type="submit" class="btn btn-primary" >Save</button>
   </form>
 
 </div>
-
 
 
 

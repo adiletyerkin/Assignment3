@@ -6,21 +6,30 @@
 <table class="table">
   <thead class="thead-light">
   <tr>
+    <th scope="col">ID</th>
     <th scope="col">Name</th>
-    <th scope="col">Description</th>
-    <th scope="col">Quantity</th>
+    <th scope="col">Type</th>
+    <th scope="col">TypeDict</th>
+    <th scope="col">By weight or box</th>
     <th scope="col">Price</th>
+    <th scope="col">Description</th>
+    <th scope="col">Img source</th>
     <th scope="col">Options</th>
     <th scope="col">More</th>
   </tr>
   </thead>
   <tbody>
   <tr *ngFor="let i of infoObj">
-    <td>{{i.Name}}</td>
-    <td>{{i.Description}}</td>
-    <td>{{i.Quantity}}</td>
+    <td>{{i.id}}</td>
+    <td>{{i.name}}</td>
+    <td>{{i.type}}</td>
+    <td>{{i.typedict}}</td>
+    <td>{{i.byweightornot}}</td>
     <td [ngStyle]="{'color':getColor(i.Price)}">
-     {{i.Price}} </td>
+     {{i.Price}}
+    </td>
+    <td>{{i.description}}</td>
+    <td>{{i.img}}</td>
     <td>
       <a>Edit </a>
       <a>Delete</a>
@@ -29,6 +38,7 @@
   </tr>
   </tbody>
 </table>
+
 
 
 

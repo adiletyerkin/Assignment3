@@ -9,41 +9,52 @@ import {ProductsService} from '../../services/products.service';
 })
 export class CreatProductsComponent implements OnInit {
 
-  Name = '';
-  Type = '';
-  Description = '';
-  Quantity = 0;
-  Price = 0;
-  id  = 0;
-
-
+  name = '';
+  type = '';
+  description = '';
+  price = 0;
+  id = 0;
+  typedict = '';
+  img = '';
+  byweightornot = '';
 
   @Output() myeventEmit = new EventEmitter<object>();
 
-  constructor(private productsService: ProductsService) { }
+  constructor(private productsService: ProductsService) {
+  }
 
   ngOnInit(): void {
   }
 
   addingInfo(): void {
     // tslint:disable-next-line:max-line-length
-    this.myeventEmit.emit({Name: this.Name, Type: this.Type, Description: this.Description, Quantity: this.Quantity, Price: this.Price, id: this.id });
+    this.myeventEmit.emit({
+      name: this.name, type: this.type, description: this.description, typedict: this.typedict, price: this.price, id: this.id,
+      img: this.img, byweightornot: this.byweightornot
+    });
     // tslint:disable-next-line:max-line-length
-    console.log({Name: this.Name, Type: this.Type, Description: this.Description, Quantity: this.Quantity, Price: this.Price, id: this.id });
+    console.log({
+      name: this.name, type: this.type, description: this.description, typedict: this.typedict, price: this.price, id: this.id,
+      img: this.img, byweightornot: this.byweightornot
+    });
     this.doDefaultValue();
   }
 
   doDefaultValue(): void {
-    this.Name = '';
-    this.Type = '';
-    this.Description = '';
-    this.Quantity = 0;
-    this.Price = 0;
+    this.name = '';
+    this.type = '';
+    this.description = '';
+    this.typedict = '';
+    this.price = 0;
     this.id = 0;
+    this.img = '';
+    this.byweightornot = '';
   }
+
   // tslint:disable-next-line:typedef
-  addProduct(){
-    const product = new Products(this.id, this.Name, this.Type, '', '', 0, '', '', '');
+  addProduct() {
+    const product = new Products(this.id, this.name, this.type, this.typedict, this.byweightornot, this.price, this.description,
+      this.img);
     this.productsService.addProduct(product);
     console.log(product);
   }
