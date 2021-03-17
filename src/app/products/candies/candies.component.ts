@@ -9,13 +9,13 @@ import {Products} from '../../services/products';
   styleUrls: ['./candies.component.scss']
 })
 export class CandiesComponent implements OnInit {
-  @Input() list: any;
 
-  constructor() {
+  constructor(private products: ProductsService) {
   }
-  // productList = this.productsService.getProducts();
+  productList: any;
   // tslint:disable-next-line:typedef
   ngOnInit() {
+    this.productList = this.products.getProducts();
   }
   // tslint:disable-next-line:typedef
   // addProduct(product: any){

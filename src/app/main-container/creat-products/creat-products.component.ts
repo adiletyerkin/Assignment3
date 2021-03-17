@@ -1,4 +1,6 @@
 import { Component, EventEmitter, Output,  OnInit } from '@angular/core';
+import {Products} from '../../services/products';
+import {ProductsService} from '../../services/products.service';
 
 @Component({
   selector: 'app-creat-products',
@@ -18,7 +20,7 @@ export class CreatProductsComponent implements OnInit {
 
   @Output() myeventEmit = new EventEmitter<object>();
 
-  constructor() { }
+  constructor(private productsService: ProductsService) { }
 
   ngOnInit(): void {
   }
@@ -38,6 +40,12 @@ export class CreatProductsComponent implements OnInit {
     this.Quantity = 0;
     this.Price = 0;
     this.id = 0;
+  }
+  // tslint:disable-next-line:typedef
+  addProduct(){
+    const product = new Products(this.id, this.Name, this.Type, '', '', 0, '', '', '');
+    this.productsService.addProduct(product);
+    console.log(product);
   }
 
 }

@@ -24,6 +24,7 @@ import { HistoryComponent } from './history/history.component';
 import { HomeComponent } from './home/home.component';
 import { ProductsDetailsComponent } from './products/products-details/products-details.component';
 import { CandiesComponent } from './products/candies/candies.component';
+import {ProductsService} from './services/products.service';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,7 @@ import { CandiesComponent } from './products/candies/candies.component';
     FormsModule,
     RouterModule.forRoot(routes, {useHash: true})
   ],
-  providers: [],
+  providers: [ProductsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
