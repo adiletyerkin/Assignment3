@@ -16,8 +16,8 @@ import { AddressesComponent } from './addresses/addresses.component';
 import { BrandShopsComponent } from './addresses/brand-shops/brand-shops.component';
 import { HistoryComponent } from './history/history.component';
 import { HomeComponent } from './home/home.component';
-import { ProductsDetailsComponent } from './products/products-details/products-details.component';
 import {CandiesComponent} from './products/candies/candies.component';
+import {DetailProdComponent} from './products/candies/detail-prod/detail-prod.component';
 
 export const routes: Routes = [
   {path: 'ProductsComponent', component: ProductsComponent,
@@ -35,7 +35,10 @@ export const routes: Routes = [
   {path: 'AddressesComponent', component: AddressesComponent},
   {path: 'BrandShopsComponent', component: BrandShopsComponent},
   {path: 'HistoryComponent', component: HistoryComponent},
-  {path: 'CandiesComponent', component: CandiesComponent},
+  {path: 'CandiesComponent', component: CandiesComponent,
+  children: [
+    {path: 'DetailProdComponent/:id', component: DetailProdComponent}
+  ]},
   {path: '', redirectTo: 'home', pathMatch: 'full'},
   {path: 'CreatedProductsComponent', component: CreatedProductsComponent}
     // canActivate: [ProductsDetailsComponent],

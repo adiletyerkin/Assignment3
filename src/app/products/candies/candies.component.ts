@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {ProductsService} from '../../services/products.service';
 import {Products} from '../../services/products';
+import {Router} from '@angular/router';
 
 
 @Component({
@@ -10,7 +11,7 @@ import {Products} from '../../services/products';
 })
 export class CandiesComponent implements OnInit {
 
-  constructor(private products: ProductsService) {
+  constructor(private products: ProductsService, private router: Router) {
   }
   productList: any;
   // tslint:disable-next-line:typedef
@@ -20,6 +21,12 @@ export class CandiesComponent implements OnInit {
   // tslint:disable-next-line:typedef
   // addProduct(product: any){
   //   this.productList.push(product);
+  // }
+
+  // tslint:disable-next-line:typedef
+  // showMore(id: number){
+  //   this.router.navigate(['DetailProdComponent', id]);
+  //
   // }
 
 

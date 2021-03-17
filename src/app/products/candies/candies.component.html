@@ -1,3 +1,8 @@
+
+<router-outlet></router-outlet>
+
+
+
 <div class="container">
 <h1 class="title-main">
   <span>Candies
@@ -11,11 +16,13 @@
       <img class="card-img-top" src="{{product.img}}" alt="Card image cap">
       <ul class="list-group list-group-flush">
         <li class="list-group-item"> <h5 class="card-title">{{product.name}}</h5> </li>
+        <li class="list-group-item">{{product.price | currency: "US"}} </li>
         <li class="list-group-item">{{product.byweightornot}}</li>
-        <li class="list-group-item">{{product.id | currency: "KZ"}} </li>
+        <li class="list-group-item">{{product.id}} </li>
       </ul>
       <div class="card-body">
-        <a  class="card-link">more</a>
+      <a [routerLink]="['DetailProdComponent', product.id]" class="card-link">more</a>
+<!--        <button (click)="showMore(product.id)" >more</button>-->
       </div>
     </div>
 
@@ -23,5 +30,9 @@
 
 </div>
 
+
+
 </div>
+
+
 

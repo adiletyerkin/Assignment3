@@ -22,9 +22,9 @@ import { AddressesComponent } from './addresses/addresses.component';
 import { BrandShopsComponent } from './addresses/brand-shops/brand-shops.component';
 import { HistoryComponent } from './history/history.component';
 import { HomeComponent } from './home/home.component';
-import { ProductsDetailsComponent } from './products/products-details/products-details.component';
 import { CandiesComponent } from './products/candies/candies.component';
 import {ProductsService} from './services/products.service';
+import { DetailProdComponent } from './products/candies/detail-prod/detail-prod.component';
 
 @NgModule({
   declarations: [
@@ -45,8 +45,8 @@ import {ProductsService} from './services/products.service';
     BrandShopsComponent,
     HistoryComponent,
     HomeComponent,
-    ProductsDetailsComponent,
-    CandiesComponent
+    CandiesComponent,
+    DetailProdComponent
   ],
   imports: [
     BrowserModule,
