@@ -25,6 +25,7 @@ import { HomeComponent } from './home/home.component';
 import { CandiesComponent } from './products/candies/candies.component';
 import {ProductsService} from './services/products.service';
 import { DetailProdComponent } from './products/candies/detail-prod/detail-prod.component';
+import {ConverterCurrencyPipe} from './pipes/convertCurrency.pipe';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { DetailProdComponent } from './products/candies/detail-prod/detail-prod.
     HistoryComponent,
     HomeComponent,
     CandiesComponent,
-    DetailProdComponent
+    DetailProdComponent,
+    ConverterCurrencyPipe
   ],
   imports: [
     BrowserModule,
