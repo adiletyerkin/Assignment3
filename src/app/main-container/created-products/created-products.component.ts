@@ -10,9 +10,9 @@ export class CreatedProductsComponent implements OnInit {
   constructor() { }
 
   getColor(price: number) {
-    if (price<=100) {
+    if (price<=1000) {
       return 'green';
-    } else if (price <= 200) {
+    } else if (price <= 3000) {
       return 'blue';
     } else {
       return 'red';

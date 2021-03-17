@@ -17,10 +17,13 @@ import { BrandShopsComponent } from './addresses/brand-shops/brand-shops.compone
 import { HistoryComponent } from './history/history.component';
 import { HomeComponent } from './home/home.component';
 import { ProductsDetailsComponent } from './products/products-details/products-details.component';
-
+import {CandiesComponent} from './products/candies/candies.component';
 
 export const routes: Routes = [
-  {path: 'ProductsComponent', component: ProductsComponent},
+  {path: 'ProductsComponent', component: ProductsComponent,
+    children: [
+      {path: 'detail/:id', component: CandiesComponent}
+    ]},
   {path: 'home', component: HomeComponent},
   {path: 'NoveltiesComponent', component: NoveltiesComponent},
   {path: 'GiftsComponent', component: GiftsComponent},
@@ -31,11 +34,9 @@ export const routes: Routes = [
   {path: 'AddressesComponent', component: AddressesComponent},
   {path: 'BrandShopsComponent', component: BrandShopsComponent},
   {path: 'HistoryComponent', component: HistoryComponent},
+  // {path: 'CandiesComponent', component: CandiesComponent},
   {path: '', redirectTo: 'home', pathMatch: 'full'},
-  {path: 'CreatedProductsComponent', component: CreatedProductsComponent,
-    canActivate: [ProductsDetailsComponent],
-    children: [
-      {path: 'detail/:id', component: ProductsDetailsComponent}
-    ]}
+  {path: 'CreatedProductsComponent', component: CreatedProductsComponent}
+    // canActivate: [ProductsDetailsComponent],
   // {path: '**', component: ErrorComponent}
 ];

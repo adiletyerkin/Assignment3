@@ -7,6 +7,8 @@
 
 
 <!--</div>-->
+
+
 <div class="container">
 <div class="main-catalog">
   <div class="main-catalog-description">
@@ -23,7 +25,7 @@
 <div style="margin-bottom: 35%; padding:20px">
 
 <div *ngFor="let i of products" class="col-sm-6 col-md-4">
-  <a routerLink="ProductsComponent" class="category-item">
+  <a [routerLink]="['detail', i.id]" class="category-item">
     <div class="image-container">
       <img class="image" src="{{i.Link}}" alt="{{i.id}}">
     </div>
@@ -34,6 +36,13 @@
 </div>
 
 </div>
+
+
+
+
+
+
+
 <!--<tr *ngFor="let i of products">-->
 <!--  <td>{{i.id}}</td>-->
 <!--  <td>{{i.Name}}</td>-->
