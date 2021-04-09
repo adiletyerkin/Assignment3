@@ -29,6 +29,7 @@ import {ConverterCurrencyPipe} from './pipes/convertCurrency.pipe';
 import { LoginPageComponent } from './login-page/login-page.component';
 import {AdminpageGuardService} from './guards/adminpage-guard.service';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -60,7 +61,8 @@ import {AdminpageGuardService} from './guards/adminpage-guard.service';
     RouterModule.forRoot(routes, {useHash: true})
   ],
   providers: [ProductsService,
-              AdminpageGuardService
+              AdminpageGuardService,
+
   ],
   bootstrap: [AppComponent]
 })

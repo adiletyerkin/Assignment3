@@ -2,23 +2,24 @@ import {ActivatedRouteSnapshot, CanDeactivate, RouterStateSnapshot, UrlTree} fro
 import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs';
 
-import {CreatProductsComponent} from '../main-container/creat-products/creat-products.component';
+// import {CreatProductsComponent} from '../main-container/creat-products/creat-products.component';
+
+export interface CreatProductsComponent {
+  canDeactivate: () => Observable<boolean> | Promise<boolean> | boolean;
+}
 
 
+@Injectable({
+  providedIn: 'root',
+})
 export class checkFillDataGuardService implements CanDeactivate<CreatProductsComponent>{
 
   canDeactivate(component: CreatProductsComponent,
                 route: ActivatedRouteSnapshot,
                 state: RouterStateSnapshot
-                ): Promise<boolean> |  boolean {
+                ){
 
-
-    if (!component.crisis || component.crisis.name === component.editName) {
-      return true;
-    }
-    // Otherwise ask the user with the dialog service and return its
-    // observable which resolves to true or false when the user decides
-    return component.dialogService.confirm('Discard changes?');
+    return component.canDeactivate ? component.canDeactivate() : true;
 
   }
 

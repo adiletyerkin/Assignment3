@@ -20,6 +20,7 @@ import {CandiesComponent} from './products/candies/candies.component';
 import {DetailProdComponent} from './products/candies/detail-prod/detail-prod.component';
 import {LoginPageComponent} from './login-page/login-page.component';
 import {AdminpageGuardService} from './guards/adminpage-guard.service';
+import {checkFillDataGuardService} from './guards/checkFillData-guard.service';
 
 export const routes: Routes = [
   {path: 'ProductsComponent', component: ProductsComponent,
@@ -45,7 +46,8 @@ export const routes: Routes = [
   ]},
   {path: '', redirectTo: 'ProductsComponent', pathMatch: 'full'},
   {path: 'CreatedProductsComponent', component: CreatedProductsComponent},
-  {path: 'CreatProductsComponent', component: CreatProductsComponent},
+  {path: 'CreatProductsComponent', component: CreatProductsComponent,
+  canDeactivate: [checkFillDataGuardService]},
   {path: 'LoginPageComponent', component: LoginPageComponent}
 
 ];
