@@ -1,6 +1,8 @@
 import { Component, EventEmitter, Output,  OnInit } from '@angular/core';
 import {Products} from '../../services/products';
 import {ProductsService} from '../../services/products.service';
+import {FormBuilder, FormGroup} from '@angular/forms';
+
 
 @Component({
   selector: 'app-creat-products',
@@ -31,7 +33,10 @@ export class CreatProductsComponent implements OnInit {
 
   @Output() myeventEmit = new EventEmitter<object>();
 
-  constructor(private productsService: ProductsService) {
+  constructor(private productsService: ProductsService,
+              private formBuilder: FormBuilder,
+
+  ) {
   }
 
   ngOnInit(): void {
@@ -70,4 +75,12 @@ export class CreatProductsComponent implements OnInit {
     console.log(product);
   }
 
+
+
 }
+
+
+
+
+
+

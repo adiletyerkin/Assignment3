@@ -1,11 +1,11 @@
-import {ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree} from '@angular/router';
+import {ActivatedRouteSnapshot, CanActivate, CanActivateChild, Router, RouterStateSnapshot, UrlTree} from '@angular/router';
 import {Injectable} from '@angular/core';
 import {AuthService} from '../services/auth.service';
 
 @Injectable({
   providedIn: 'root',
 })
-export class AdminpageGuardService implements CanActivate{
+export class AdminpageGuardService implements CanActivate, CanActivateChild{
 
   constructor(private authService: AuthService, private router: Router) {}
 
@@ -16,6 +16,15 @@ export class AdminpageGuardService implements CanActivate{
 
     return this.checkLogin(url);
   }
+
+  canActivateChild(
+    next: ActivatedRouteSnapshot,
+    state: RouterStateSnapshot): true|UrlTree {
+    const url: string = state.url;
+
+    return this.checkLogin(url);
+  }
+
 
   checkLogin(url: string): true|UrlTree {
     if (this.authService.isLoggedIn) { return true; }

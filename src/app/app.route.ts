@@ -39,6 +39,7 @@ export const routes: Routes = [
   {path: 'BrandShopsComponent', component: BrandShopsComponent},
   {path: 'HistoryComponent', component: HistoryComponent},
   {path: 'CandiesComponent', component: CandiesComponent,
+    canActivateChild:[AdminpageGuardService],
   children: [
     {path: 'DetailProdComponent/:id', component: DetailProdComponent}
   ]},
