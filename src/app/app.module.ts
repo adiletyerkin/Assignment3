@@ -28,6 +28,8 @@ import { DetailProdComponent } from './products/candies/detail-prod/detail-prod.
 import {ConverterCurrencyPipe} from './pipes/convertCurrency.pipe';
 import { LoginPageComponent } from './login-page/login-page.component';
 import {AdminpageGuardService} from './guards/adminpage-guard.service';
+import {checkFillDataGuardService} from './guards/checkFillData-guard.service';
+import {ComponentCanDeac} from './guards/component-canDeac';
 
 
 @NgModule({
@@ -53,6 +55,7 @@ import {AdminpageGuardService} from './guards/adminpage-guard.service';
     DetailProdComponent,
     ConverterCurrencyPipe,
     LoginPageComponent
+
   ],
   imports: [
     BrowserModule,
@@ -62,6 +65,7 @@ import {AdminpageGuardService} from './guards/adminpage-guard.service';
   ],
   providers: [ProductsService,
               AdminpageGuardService,
+    checkFillDataGuardService
 
   ],
   bootstrap: [AppComponent]

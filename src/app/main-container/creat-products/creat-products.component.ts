@@ -1,13 +1,15 @@
-import { Component, EventEmitter, Output,  OnInit } from '@angular/core';
+import {Component, EventEmitter, Output, OnInit, HostListener, ViewChild} from '@angular/core';
 import {Products} from '../../services/products';
 import {ProductsService} from '../../services/products.service';
+import {NgForm} from '@angular/forms';
+import {FormComponent} from '../../form.component';
 
 @Component({
   selector: 'app-creat-products',
   templateUrl: './creat-products.component.html',
   styleUrls: ['./creat-products.component.scss']
 })
-export class CreatProductsComponent implements OnInit {
+export class CreatProductsComponent extends FormComponent  implements OnInit {
 
   options = [
     { name: 'Candies', value: 'Candies' },
@@ -32,18 +34,17 @@ export class CreatProductsComponent implements OnInit {
   @Output() myeventEmit = new EventEmitter<object>();
 
   constructor(private productsService: ProductsService) {
+    super();
   }
 
   ngOnInit(): void {
   }
 
   addingInfo(): void {
-    // tslint:disable-next-line:max-line-length
     this.myeventEmit.emit({
       name: this.name, type: this.type, description: this.description, typedict: this.typedict, price: this.price, id: this.id,
       img: this.img, byweightornot: this.byweightornot
     });
-    // tslint:disable-next-line:max-line-length
     console.log({
       name: this.name, type: this.type, description: this.description, typedict: this.typedict, price: this.price, id: this.id,
       img: this.img, byweightornot: this.byweightornot
@@ -62,12 +63,21 @@ export class CreatProductsComponent implements OnInit {
     this.byweightornot = '';
   }
 
-  // tslint:disable-next-line:typedef
+  // @ViewChild('form')
+  // form: NgForm;
+
+
   addProduct() {
     const product = new Products(this.id, this.name, this.type, this.typedict, this.byweightornot, this.price, this.description,
       this.img);
     this.productsService.addProduct(product);
-    console.log(product);
+    console.log(this.form.submitted);
   }
+
+  get form(): NgForm {
+    return this.form;
+  }
+
+
 
 }
