@@ -16,9 +16,9 @@
       <img class="card-img-top" src="{{product.img}}" alt="Card image cap">
       <ul class="list-group list-group-flush">
         <li class="list-group-item"> <h5 class="card-title">{{product.name}}</h5> </li>
-        <li class="list-group-item">{{product.price | converterCurrency: 'US' | currency: "US"}} </li>
+        <li class="list-group-item">{{product.price | converterCurrency: 'RU' | currency: "RU" }} </li>
         <li class="list-group-item">{{product.byweightornot}}</li>
-        <li class="list-group-item">{{product.id}} </li>
+        <li class="list-group-item">№{{product.id}} </li>
       </ul>
       <div class="card-body">
       <a [routerLink]="['DetailProdComponent', product.id]" class="card-link">more</a>

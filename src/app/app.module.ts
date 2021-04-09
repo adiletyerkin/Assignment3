@@ -26,6 +26,8 @@ import { CandiesComponent } from './products/candies/candies.component';
 import {ProductsService} from './services/products.service';
 import { DetailProdComponent } from './products/candies/detail-prod/detail-prod.component';
 import {ConverterCurrencyPipe} from './pipes/convertCurrency.pipe';
+import { LoginPageComponent } from './login-page/login-page.component';
+import {AdminpageGuardService} from './guards/adminpage-guard.service';
 
 @NgModule({
   declarations: [
@@ -48,7 +50,8 @@ import {ConverterCurrencyPipe} from './pipes/convertCurrency.pipe';
     HomeComponent,
     CandiesComponent,
     DetailProdComponent,
-    ConverterCurrencyPipe
+    ConverterCurrencyPipe,
+    LoginPageComponent
   ],
   imports: [
     BrowserModule,
@@ -56,7 +59,9 @@ import {ConverterCurrencyPipe} from './pipes/convertCurrency.pipe';
     FormsModule,
     RouterModule.forRoot(routes, {useHash: true})
   ],
-  providers: [ProductsService],
+  providers: [ProductsService,
+              AdminpageGuardService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

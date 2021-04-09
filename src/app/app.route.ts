@@ -18,6 +18,8 @@ import { HistoryComponent } from './history/history.component';
 import { HomeComponent } from './home/home.component';
 import {CandiesComponent} from './products/candies/candies.component';
 import {DetailProdComponent} from './products/candies/detail-prod/detail-prod.component';
+import {LoginPageComponent} from './login-page/login-page.component';
+import {AdminpageGuardService} from './guards/adminpage-guard.service';
 
 export const routes: Routes = [
   {path: 'ProductsComponent', component: ProductsComponent,
@@ -25,7 +27,8 @@ export const routes: Routes = [
     //   {path: 'detail/:id', component: CandiesComponent}
     // ]
   },
-  {path: 'home', component: HomeComponent},
+  {path: 'home', component: HomeComponent,
+    canActivate: [AdminpageGuardService]},
   {path: 'NoveltiesComponent', component: NoveltiesComponent},
   {path: 'GiftsComponent', component: GiftsComponent},
   {path: 'AboutComponent', component: AboutComponent},
@@ -39,8 +42,9 @@ export const routes: Routes = [
   children: [
     {path: 'DetailProdComponent/:id', component: DetailProdComponent}
   ]},
-  {path: '', redirectTo: 'home', pathMatch: 'full'},
-  {path: 'CreatedProductsComponent', component: CreatedProductsComponent}
-    // canActivate: [ProductsDetailsComponent],
-  // {path: '**', component: ErrorComponent}
+  {path: '', redirectTo: 'ProductsComponent', pathMatch: 'full'},
+  {path: 'CreatedProductsComponent', component: CreatedProductsComponent},
+  {path: 'CreatProductsComponent', component: CreatProductsComponent},
+  {path: 'LoginPageComponent', component: LoginPageComponent}
+
 ];
