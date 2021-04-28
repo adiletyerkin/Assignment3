@@ -10,22 +10,29 @@ import {Router} from '@angular/router';
   styleUrls: ['./candies.component.scss']
 })
 export class CandiesComponent implements OnInit {
-  products: Products[] = [];
+  // products: Products[] = [];
+  productList: any;
 
-  id: number | undefined;
   constructor(private productsservice: ProductsService,
               private router: Router) {
   }
-  productList: any;
+
   ngOnInit() {
-    this.getData();
+    this.productList = this.productsservice.getProducts();
+    // this.getData();
   }
 
-  getData(){
-    this.productsservice.getData().subscribe(res => {
-      this.products = res;
-    });
-  }
+  // getData(){
+  //   this.productsservice.getData().subscribe(res => {
+  //     this.products = res;
+  //   });
+  // }
+
+
+
+
+
+
 
 
 

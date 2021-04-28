@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Products} from '../../../services/products';
 import {ProductsService} from '../../../services/products.service';
@@ -13,9 +13,7 @@ import {analyticsPackageSafelist} from '@angular/cli/models/analytics';
 })
 export class DetailProdComponent implements OnInit {
 
-  product: Products | undefined;
-  // productList : any;
-  productid: number | undefined;
+  product = new Products(1, '', '', '', '', 0, '', '');
 
   constructor(
     private activatedrouter: ActivatedRoute,
@@ -23,21 +21,35 @@ export class DetailProdComponent implements OnInit {
     private router: Router,
   ) { }
 
-  // productList: any;
+  productList: any;
+
 
   ngOnInit(): void {
-    // @ts-ignore
-    this.productid = +this.activatedrouter.snapshot.paramMap.get('id');
-    this.getDataById();
-  }
 
-  getDataById(){
-    this.productsservice.getDataById(this.productid).subscribe(res => {
-      this.product = res;
+    this.router.events.subscribe((val) => {
+      // @ts-ignore
+      const id = +this.activatedrouter.snapshot.paramMap.get('id');
+      this.productList = this.productsservice.getProducts();
+      for (let i = 0; i < this.productList.length; i += 1){
+        if (id === this.productList[i].id) {
+          this.product = this.productList[i];
+        }
+      }
       console.log(this.product);
-
     });
+
+
+    // @ts-ignore
+    // this.productid = +this.activatedrouter.snapshot.paramMap.get('id');
+    // this.getDataById();
   }
+
+  // getDataById(){
+  //   this.productsservice.getDataById(this.productid).subscribe(res => {
+  //     this.product = res;
+  //     console.log(this.product);
+  //   });
+  // }
 
 
 }

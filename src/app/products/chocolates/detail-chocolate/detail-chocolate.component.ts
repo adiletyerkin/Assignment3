@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Products} from '../../../services/products';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Route, Router} from '@angular/router';
 import {ProductsService} from '../../../services/products.service';
 
 @Component({
@@ -15,16 +15,21 @@ export class DetailChocolateComponent implements OnInit {
   constructor(
     private activatedrouter: ActivatedRoute,
     private productsservice: ProductsService,
+    private router: Router
+
   ) { }
 
   ngOnInit(): void {
-    // @ts-ignore
-    this.productid = +this.activatedrouter.snapshot.paramMap.get('id');
-    this.getDataByIdChok();
+
+    this.router.events.subscribe((val) => {
+      // @ts-ignore
+      const id = +this.activatedrouter.snapshot.paramMap.get('id');
+      this.getDataByIdChok(id);
+    });
   }
 
-  getDataByIdChok(){
-    this.productsservice.getDataById(this.productid).subscribe(res => {
+  getDataByIdChok(id: number){
+    this.productsservice.getDataById(id).subscribe(res => {
       this.product = res;
       console.log(this.product);
 

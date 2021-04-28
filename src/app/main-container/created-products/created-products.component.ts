@@ -20,9 +20,7 @@ export class CreatedProductsComponent implements OnInit {
     }
   }
 
-
   ngOnInit(): void {
   }
 
 }
-

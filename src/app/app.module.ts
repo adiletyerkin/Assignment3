@@ -5,7 +5,7 @@ import {routes} from './app.route';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { MainContainerComponent } from './main-container/main-container.component';
@@ -31,6 +31,8 @@ import {AdminpageGuardService} from './guards/adminpage-guard.service';
 import { ChocolatesComponent } from './products/chocolates/chocolates.component';
 import {HttpClientModule} from '@angular/common/http';
 import { DetailChocolateComponent } from './products/chocolates/detail-chocolate/detail-chocolate.component';
+import {checkFillDataGuardService} from './guards/checkFillData-guard.service';
+import {DeactiveGuard} from './guards/deactive.guard';
 // import {checkFillDataGuardService} from './guards/checkFillData-guard.service';
 // import {ComponentCanDeac} from './guards/component-canDeac';
 
@@ -67,11 +69,13 @@ import { DetailChocolateComponent } from './products/chocolates/detail-chocolate
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    RouterModule.forRoot(routes, {useHash: true})
+    RouterModule.forRoot(routes, {useHash: true}),
+    ReactiveFormsModule
   ],
   providers: [ProductsService,
               AdminpageGuardService,
-    // checkFillDataGuardService
+    checkFillDataGuardService,
+    DeactiveGuard
 
   ],
   bootstrap: [AppComponent]

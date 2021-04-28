@@ -22,6 +22,8 @@ import {LoginPageComponent} from './login-page/login-page.component';
 import {AdminpageGuardService} from './guards/adminpage-guard.service';
 import {ChocolatesComponent} from './products/chocolates/chocolates.component';
 import {DetailChocolateComponent} from './products/chocolates/detail-chocolate/detail-chocolate.component';
+import {checkFillDataGuardService} from './guards/checkFillData-guard.service';
+import {DeactiveGuard} from './guards/deactive.guard';
 // import {checkFillDataGuardService} from './guards/checkFillData-guard.service';
 
 export const routes: Routes = [
@@ -31,7 +33,8 @@ export const routes: Routes = [
     // ]
   },
   {path: 'home', component: HomeComponent,
-    //canActivate: [AdminpageGuardService]
+    canActivate: [AdminpageGuardService],
+    // canDeactivate: [DeactiveGuard]
   },
   {path: 'NoveltiesComponent', component: NoveltiesComponent},
   {path: 'GiftsComponent', component: GiftsComponent},
@@ -49,8 +52,7 @@ export const routes: Routes = [
   ]},
   {path: '', redirectTo: 'ProductsComponent', pathMatch: 'full'},
   {path: 'CreatedProductsComponent', component: CreatedProductsComponent},
-  {path: 'CreatProductsComponent', component: CreatProductsComponent,
-  // canDeactivate: [checkFillDataGuardService]
+  {path: 'CreatProductsComponent', component: CreatProductsComponent
   },
   {path: 'LoginPageComponent', component: LoginPageComponent},
   {path: 'ChocolatesComponent', component: ChocolatesComponent,

@@ -9,7 +9,7 @@ export class MainContainerComponent implements OnInit {
 
 
   infoObj = [
-    {Name: '', Description: '', Quantity: 0, Price: 0, id : 0}
+    {id: 0, name: '', type: '', typedict: '', byweightornot: '', price: 0, description: '', img: ''}
   ];
 
   constructor() { }

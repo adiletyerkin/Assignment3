@@ -1,4 +1,11 @@
 {
+  "User": [
+    {
+      "id": 1,
+      "password:" : "admin",
+      "login": "admin"
+    }
+  ],
   "Candies": [
     {
       "id": 410,
@@ -129,6 +136,9 @@
       "byweightornot": "plastic packing, 250g",
       "price": 1200,
       "img": "http://www.rakhat.kz/app/uploads/cache/2017/07/Kazahstanskij-kub_250-800x600-c-default.jpg"
+    },
+    {
+      "id": 100482
     }
   ]
 }

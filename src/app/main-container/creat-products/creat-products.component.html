@@ -4,7 +4,7 @@
   <form #form="ngForm" (ngSubmit)="addingInfo()">
     <div class="form-group">
       <label>Product Name: </label>
-      <input name = "Name" [(ngModel)]="name" id="date" type="text" class="form-control"  aria-describedby="emailHelp" placeholder="Name" >
+      <input name = "Name" [(ngModel)]="name" id="date" type="text" class="form-control"  aria-describedby="emailHelp" placeholder="Name" (change)="checktouch2(name)">
       <span>Name is {{name}}</span>
     </div>
 

@@ -13,25 +13,24 @@ export class AdminpageGuardService implements CanActivate, CanActivateChild{
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): true|UrlTree {
     const url: string = state.url;
-
     return this.checkLogin(url);
   }
+
 
   canActivateChild(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): true|UrlTree {
     const url: string = state.url;
-
     return this.checkLogin(url);
   }
 
 
   checkLogin(url: string): true|UrlTree {
-    if (this.authService.isLoggedIn) { return true; }
-
+    if (this.authService.isLoggedIn) {
+      return true;
+    }
     // Store the attempted URL for redirecting
     this.authService.redirectUrl = url;
-
     // Redirect to the login page
     return this.router.parseUrl('LoginPageComponent');
   }

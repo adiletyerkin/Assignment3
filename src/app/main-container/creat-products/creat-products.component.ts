@@ -19,6 +19,13 @@ export class CreatProductsComponent{
   img = '';
   byweightornot = '';
 
+
+
+     // this.name!=""||this.type!=""||this.description!=""||this.price!=0||this.id!=0||this.typedict!=""
+     //  ||this.img!="" ||this.byweightornot!="";
+
+
+
   options = [
     { name: 'Candies', value: 'Candies' },
     { name: 'Caramel', value: 'Caramel' },
@@ -34,9 +41,16 @@ export class CreatProductsComponent{
 
   constructor(private productsService: ProductsService) {
   }
+  ch : boolean = false;
+  checktouch2(str : string) {
+    if (str != "") {
+      this.ch = true;
+    } else {
+      this.ch = false;
+    }
+    console.log("checking"+str);
+  }
 
-  // ngOnInit(): void {
-  // }
 
   addingInfo(): void {
     this.myeventEmit.emit({
