@@ -33,6 +33,7 @@ import {HttpClientModule} from '@angular/common/http';
 import { DetailChocolateComponent } from './products/chocolates/detail-chocolate/detail-chocolate.component';
 import {checkFillDataGuardService} from './guards/checkFillData-guard.service';
 import {DeactiveGuard} from './guards/deactive.guard';
+import {ProductsModule} from './products/products.module';
 // import {checkFillDataGuardService} from './guards/checkFillData-guard.service';
 // import {ComponentCanDeac} from './guards/component-canDeac';
 
@@ -45,9 +46,9 @@ import {DeactiveGuard} from './guards/deactive.guard';
     MainContainerComponent,
     CreatedProductsComponent,
     CreatProductsComponent,
-    ProductsComponent,
-    NoveltiesComponent,
-    GiftsComponent,
+    // ProductsComponent,
+    // NoveltiesComponent,
+    // GiftsComponent,
     AboutComponent,
     OfficialsComponent,
     AwardsComponent,
@@ -56,12 +57,12 @@ import {DeactiveGuard} from './guards/deactive.guard';
     BrandShopsComponent,
     HistoryComponent,
     HomeComponent,
-    CandiesComponent,
-    DetailProdComponent,
-    ConverterCurrencyPipe,
+    // CandiesComponent,
+    // DetailProdComponent,
+    // ConverterCurrencyPipe,
     LoginPageComponent,
-    ChocolatesComponent,
-    DetailChocolateComponent
+    // ChocolatesComponent,
+    // DetailChocolateComponent
 
   ],
   imports: [
@@ -70,7 +71,8 @@ import {DeactiveGuard} from './guards/deactive.guard';
     FormsModule,
     HttpClientModule,
     RouterModule.forRoot(routes, {useHash: true}),
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ProductsModule
   ],
   providers: [ProductsService,
               AdminpageGuardService,

@@ -27,11 +27,7 @@ import {DeactiveGuard} from './guards/deactive.guard';
 // import {checkFillDataGuardService} from './guards/checkFillData-guard.service';
 
 export const routes: Routes = [
-  {path: 'ProductsComponent', component: ProductsComponent,
-    // children: [
-    //   {path: 'detail/:id', component: CandiesComponent}
-    // ]
-  },
+  {path: 'ProductsComponent', component: ProductsComponent},
   {path: 'home', component: HomeComponent,
     canActivate: [AdminpageGuardService],
     // canDeactivate: [DeactiveGuard]
