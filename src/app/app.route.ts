@@ -20,7 +20,9 @@ import {CandiesComponent} from './products/candies/candies.component';
 import {DetailProdComponent} from './products/candies/detail-prod/detail-prod.component';
 import {LoginPageComponent} from './login-page/login-page.component';
 import {AdminpageGuardService} from './guards/adminpage-guard.service';
-import {checkFillDataGuardService} from './guards/checkFillData-guard.service';
+import {ChocolatesComponent} from './products/chocolates/chocolates.component';
+import {DetailChocolateComponent} from './products/chocolates/detail-chocolate/detail-chocolate.component';
+// import {checkFillDataGuardService} from './guards/checkFillData-guard.service';
 
 export const routes: Routes = [
   {path: 'ProductsComponent', component: ProductsComponent,
@@ -29,7 +31,8 @@ export const routes: Routes = [
     // ]
   },
   {path: 'home', component: HomeComponent,
-    canActivate: [AdminpageGuardService]},
+    //canActivate: [AdminpageGuardService]
+  },
   {path: 'NoveltiesComponent', component: NoveltiesComponent},
   {path: 'GiftsComponent', component: GiftsComponent},
   {path: 'AboutComponent', component: AboutComponent},
@@ -40,14 +43,19 @@ export const routes: Routes = [
   {path: 'BrandShopsComponent', component: BrandShopsComponent},
   {path: 'HistoryComponent', component: HistoryComponent},
   {path: 'CandiesComponent', component: CandiesComponent,
-    canActivateChild:[AdminpageGuardService],
+   // canActivateChild:[AdminpageGuardService],
   children: [
     {path: 'DetailProdComponent/:id', component: DetailProdComponent}
   ]},
   {path: '', redirectTo: 'ProductsComponent', pathMatch: 'full'},
   {path: 'CreatedProductsComponent', component: CreatedProductsComponent},
   {path: 'CreatProductsComponent', component: CreatProductsComponent,
-  canDeactivate: [checkFillDataGuardService]},
-  {path: 'LoginPageComponent', component: LoginPageComponent}
+  // canDeactivate: [checkFillDataGuardService]
+  },
+  {path: 'LoginPageComponent', component: LoginPageComponent},
+  {path: 'ChocolatesComponent', component: ChocolatesComponent,
+    children: [
+      {path: 'DetailChocolateComponent/:id', component: DetailChocolateComponent}
+    ]},
 
 ];

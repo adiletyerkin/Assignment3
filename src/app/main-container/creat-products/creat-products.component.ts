@@ -2,25 +2,13 @@ import {Component, EventEmitter, Output, OnInit, HostListener, ViewChild} from '
 import {Products} from '../../services/products';
 import {ProductsService} from '../../services/products.service';
 import {NgForm} from '@angular/forms';
-import {FormComponent} from '../../form.component';
 
 @Component({
   selector: 'app-creat-products',
   templateUrl: './creat-products.component.html',
   styleUrls: ['./creat-products.component.scss']
 })
-export class CreatProductsComponent extends FormComponent  implements OnInit {
-
-  options = [
-    { name: 'Candies', value: 'Candies' },
-    { name: 'Caramel', value: 'Caramel' },
-    { name: 'Toffee(Iris)', value: 'Toffee(Iris)' },
-    { name: 'Chocolate', value: 'Chocolate' },
-    { name: 'Biscuits', value: 'Biscuits' },
-    { name: 'Waffles', value: 'Waffles' },
-    { name: 'Cocoa powder/ semi products', value: 'Cocoa powder/ semi products' },
-    { name: 'Fruit jelly(Marmelad)', value: 'Fruit jelly(Marmelad)' }
-  ];
+export class CreatProductsComponent{
 
   name = '';
   type = '';
@@ -31,14 +19,24 @@ export class CreatProductsComponent extends FormComponent  implements OnInit {
   img = '';
   byweightornot = '';
 
+  options = [
+    { name: 'Candies', value: 'Candies' },
+    { name: 'Caramel', value: 'Caramel' },
+    { name: 'Toffee(Iris)', value: 'Toffee(Iris)' },
+    { name: 'Chocolates', value: 'Chocolates' },
+    { name: 'Biscuits', value: 'Biscuits' },
+    { name: 'Waffles', value: 'Waffles' },
+    { name: 'Cocoa powder/ semi products', value: 'Cocoa powder/ semi products' },
+    { name: 'Fruit jelly(Marmelad)', value: 'Fruit jelly(Marmelad)' }
+  ];
+
   @Output() myeventEmit = new EventEmitter<object>();
 
   constructor(private productsService: ProductsService) {
-    super();
   }
 
-  ngOnInit(): void {
-  }
+  // ngOnInit(): void {
+  // }
 
   addingInfo(): void {
     this.myeventEmit.emit({
@@ -63,19 +61,16 @@ export class CreatProductsComponent extends FormComponent  implements OnInit {
     this.byweightornot = '';
   }
 
-  // @ViewChild('form')
-  // form: NgForm;
 
+  get form(): NgForm {
+    return this.form;
+  }
 
   addProduct() {
     const product = new Products(this.id, this.name, this.type, this.typedict, this.byweightornot, this.price, this.description,
       this.img);
     this.productsService.addProduct(product);
-    console.log(this.form.submitted);
-  }
-
-  get form(): NgForm {
-    return this.form;
+    console.log(product);
   }
 
 

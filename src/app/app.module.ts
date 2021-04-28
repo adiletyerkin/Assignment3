@@ -28,8 +28,11 @@ import { DetailProdComponent } from './products/candies/detail-prod/detail-prod.
 import {ConverterCurrencyPipe} from './pipes/convertCurrency.pipe';
 import { LoginPageComponent } from './login-page/login-page.component';
 import {AdminpageGuardService} from './guards/adminpage-guard.service';
-import {checkFillDataGuardService} from './guards/checkFillData-guard.service';
-import {ComponentCanDeac} from './guards/component-canDeac';
+import { ChocolatesComponent } from './products/chocolates/chocolates.component';
+import {HttpClientModule} from '@angular/common/http';
+import { DetailChocolateComponent } from './products/chocolates/detail-chocolate/detail-chocolate.component';
+// import {checkFillDataGuardService} from './guards/checkFillData-guard.service';
+// import {ComponentCanDeac} from './guards/component-canDeac';
 
 
 @NgModule({
@@ -54,18 +57,21 @@ import {ComponentCanDeac} from './guards/component-canDeac';
     CandiesComponent,
     DetailProdComponent,
     ConverterCurrencyPipe,
-    LoginPageComponent
+    LoginPageComponent,
+    ChocolatesComponent,
+    DetailChocolateComponent
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientModule,
     RouterModule.forRoot(routes, {useHash: true})
   ],
   providers: [ProductsService,
               AdminpageGuardService,
-    checkFillDataGuardService
+    // checkFillDataGuardService
 
   ],
   bootstrap: [AppComponent]

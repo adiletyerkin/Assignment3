@@ -10,14 +10,26 @@ import {Router} from '@angular/router';
   styleUrls: ['./candies.component.scss']
 })
 export class CandiesComponent implements OnInit {
+  products: Products[] = [];
 
-  constructor(private products: ProductsService, private router: Router) {
+  id: number | undefined;
+  constructor(private productsservice: ProductsService,
+              private router: Router) {
   }
   productList: any;
-  // tslint:disable-next-line:typedef
   ngOnInit() {
-    this.productList = this.products.getProducts();
+    this.getData();
   }
+
+  getData(){
+    this.productsservice.getData().subscribe(res => {
+      this.products = res;
+    });
+  }
+
+
+
+
   // tslint:disable-next-line:typedef
   // addProduct(product: any){
   //   this.productList.push(product);

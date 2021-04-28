@@ -1,0 +1,42 @@
+.title-main{
+  box-sizing: inherit;
+  margin: .67em 0;
+  font-family: inherit;
+  font-weight: 500;
+  line-height: 1.1;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  color: #9c5e72;
+  border-bottom: solid 2px #ead4ca;
+  padding-bottom: 20px;
+  font-size: 36px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transform: translate3d(0, 0, 0);
+}
+
+.product-description{
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #333;
+  font-family: 'Optima', serif;
+  box-sizing: inherit;
+  width: 100%;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 3px #bbb;
+  transform: translate3d(0, 0, 0);
+}
+
+.image-container{
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #333;
+  font-family: 'Optima', serif;
+  box-sizing: inherit;
+  border: 0;
+  vertical-align: middle;
+  max-width: 100%;
+  transform: translate3d(0, 0, 0);
+}

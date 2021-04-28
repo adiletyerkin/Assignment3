@@ -1,0 +1,134 @@
+{
+  "Candies": [
+    {
+      "id": 410,
+      "name": "Aisulu",
+      "type": "Candies",
+      "typedict": "CANDY WITH WHIPPED EGG-WHITE BODY COATED WITH CHOCOLATE",
+      "description": "Chocolate made of high-quality cocoa beans by traditional technology, with adding of milk and delicate aroma of natural vanilla.",
+      "byweightornot": "by wieght",
+      "price": 1200,
+      "img": "http://www.rakhat.kz/app/uploads/cache/2017/06/KS_IMG_0767-0788-0789-1-800x600-c-default.jpg"
+    },
+    {
+      "id": 413,
+      "name": "Aisulu Shocklate",
+      "type": "Candies",
+      "typedict": "CANDY WITH WHIPPED EGG-WHITE BODY COATED WITH CHOCOLATE",
+      "description": "Glazed, whipped on protein mass, with taste of cream and vanilla, with adding of chocolate",
+      "byweightornot": "by wieght",
+      "price": 1300,
+      "img": "http://www.rakhat.kz/app/uploads/cache/2017/06/KS_IMG_0769-0792-0793-1-800x600-c-default.jpg"
+    },
+    {
+      "id": 548,
+      "name": "Koktem",
+      "type": "Candies",
+      "typedict": "CANDY WITH WHIPPED EGG-WHITE BODY COATED WITH CHOCOLATE",
+      "description": "Tender souffle with vanilla flavor in chocolate glaze.",
+      "byweightornot": "by wieght",
+      "price": 1000,
+      "img": "http://www.rakhat.kz/app/uploads/cache/2017/07/Kok-tem-800x600-c-default.jpg"
+    },
+    {
+      "id": 549,
+      "name": "SOUFFLE CHERRY",
+      "type": "Candies",
+      "typedict": "CANDY WITH WHIPPED EGG-WHITE BODY COATED WITH CHOCOLATE",
+      "description": "CANDIES WITH STUFFING",
+      "byweightornot": "by wieght",
+      "price": 1800,
+      "img": "http://www.rakhat.kz/app/uploads/cache/2017/07/So-vkusom-vishni-800x600-c-default.jpg"
+    },
+    {
+      "id": 525,
+      "name": "Dostyk",
+      "type": "Candies",
+      "typedict": "CANDIES WITH STUFFING",
+      "description": "With soft stewed milky and creamy filling creme brulee on the base of whole condensed milk and natural butter, with adding of cognac and spirit.",
+      "byweightornot": "by wieght",
+      "price": 1750,
+      "img": "http://www.rakhat.kz/app/uploads/cache/2017/07/Dostyk-vse-400x300-c-default.jpg"
+    },
+    {
+      "id": 525,
+      "name": "Dostyk",
+      "type": "Candies",
+      "typedict": "CANDIES WITH STUFFING",
+      "description": "With soft stewed milky and creamy filling creme brulee on the base of whole condensed milk and natural butter, with adding of cognac and spirit.",
+      "byweightornot": "by wieght",
+      "price": 1750,
+      "img": "http://www.rakhat.kz/app/uploads/cache/2017/07/Dostyk-vse-800x600-c-default.jpg"
+    },
+    {
+      "id": 507,
+      "name": "Grillazh",
+      "type": "Candies",
+      "typedict": "COATED CANDIED ROASTED NUTS",
+      "description": "Candied roasted peanuts mass, coated with chocolate glaze.",
+      "byweightornot": "by wieght",
+      "price": 1850,
+      "img": "http://www.rakhat.kz/app/uploads/cache/2017/06/KS_IMG_0043-0640-0661-1-800x600-c-default.jpg"
+    },
+    {
+      "id": 10046,
+      "name": "QAZAQSTAN ÓNERI",
+      "type": "Candies",
+      "typedict": "CANDIES IN FANCY BOXES",
+      "description": "Set of chocolate candies with fondant fillings: crème brûlée filling with vanilla aroma; chocolate filling with vanilla aroma; creamy filling with aroma of milk and cream.",
+      "byweightornot": "decorative box 270g",
+      "price": 3000,
+      "img": "http://www.rakhat.kz/app/uploads/cache/2020/11/Kuttyktajmyz-800h600-800x600-c-default.jpg"
+    },
+    {
+      "id": 100480,
+      "name": "KAZAKHSTANSKIY QAZAQSTAN ÓNERI",
+      "type": "Chocolate",
+      "typedict": "Chocolate without extrathings",
+      "description": "Chocolate made of high-quality cocoa beans by traditional technology, with adding of milk and delicate aroma of natural vanilla.",
+      "byweightornot": "Cardboard packing, 100g",
+      "price": 400,
+      "img": "http://www.rakhat.kz/app/uploads/cache/2020/11/QO-Kazahstanskij-Mozaika-800h600-800x600-c-default.jpg"
+    },
+    {
+      "id": 10090,
+      "name": "КАЗАХСТАНСКИЙ (ГОРОДСКИЕ ИСТОРИИ)",
+      "type": "Chocolate",
+      "typedict": "Chocolate without extrathings",
+      "description": "Vanilla flavored grated cocoa high content chocolate . Total content of cocoa products not less than 45%.",
+      "byweightornot": "Cardboard packing, 160g",
+      "price": 900,
+      "img": "http://www.rakhat.kz/app/uploads/cache/2021/03/Kazahstanskij-Gorodskie-istorii-160g-800h600-800x600-c-default.jpg"
+    },
+    {
+      "id": 100481,
+      "name": "KAZAKHSTANSKIY QAZAQSTAN ÓNERI",
+      "type": "Chocolate",
+      "typedict": "Chocolate without extrathings",
+      "description": "Chocolate made of high-quality cocoa beans by traditional technology, with adding of milk and delicate aroma of natural vanilla.",
+      "byweightornot": "Cardboard packing, 100g",
+      "price": 400,
+      "img": "http://www.rakhat.kz/app/uploads/cache/2020/11/QO-Kazahstanskij-CHingihan-800h600-1-800x600-c-default.jpg"
+    },
+    {
+      "id": 1203,
+      "name": "KAZAKHSTANSKIY",
+      "type": "Chocolate",
+      "typedict": "Chocolate without extrathings",
+      "description": "Natural milk chocolate with high content of ground cocoa, with vanilla aroma.",
+      "byweightornot": "Cardboard packing, 100g",
+      "price": 400,
+      "img": "http://www.rakhat.kz/app/uploads/cache/2017/07/Kazahstanskij-100-800x600-c-default.jpg"
+    },
+    {
+      "id": 1166,
+      "name": "KAZAKHSTANSKIY",
+      "type": "Chocolate",
+      "typedict": "Chocolate without extrathings",
+      "description": "Natural milk chocolate with high content of ground cocoa, with vanilla aroma (slab chocolate 5 g). Content of cocoa products is no less than 45%",
+      "byweightornot": "plastic packing, 250g",
+      "price": 1200,
+      "img": "http://www.rakhat.kz/app/uploads/cache/2017/07/Kazahstanskij-kub_250-800x600-c-default.jpg"
+    }
+  ]
+}

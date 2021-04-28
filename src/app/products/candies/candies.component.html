@@ -4,15 +4,17 @@
 
 
 <div class="container">
+
+
 <h1 class="title-main">
   <span>Candies
   </span>
 </h1>
 
 <div class="row">
-
-  <div *ngFor="let product of productList"  class="col-sm-3">
-    <div  class="card" style="width: 18rem;">
+  <div *ngFor="let product of products" >
+    <div class="col-sm-3" *ngIf="product.type == 'Candies'"  >
+    <div  class="card" style="width: 24rem;">
       <img class="card-img-top" src="{{product.img}}" alt="Card image cap">
       <ul class="list-group list-group-flush">
         <li class="list-group-item"> <h5 class="card-title">{{product.name}}</h5> </li>
@@ -21,16 +23,15 @@
         <li class="list-group-item">№{{product.id}} </li>
       </ul>
       <div class="card-body">
-      <a [routerLink]="['DetailProdComponent', product.id]" class="card-link">more</a>
+<!--      <a [routerLink]="['DetailProdComponent', product.id]" class="card-link">more</a>-->
 <!--        <button (click)="showMore(product.id)" >more</button>-->
       </div>
     </div>
     <br>
   </div>
+  </div>
 
 </div>
-
-
 
 </div>
 

@@ -4,6 +4,7 @@ import {Products} from '../../../services/products';
 import {ProductsService} from '../../../services/products.service';
 import {Observable} from 'rxjs';
 import {switchMap} from 'rxjs/operators';
+import {analyticsPackageSafelist} from '@angular/cli/models/analytics';
 
 @Component({
   selector: 'app-detail-prod',
@@ -11,33 +12,47 @@ import {switchMap} from 'rxjs/operators';
   styleUrls: ['./detail-prod.component.scss']
 })
 export class DetailProdComponent implements OnInit {
-  // select: number | undefined;
-  // id$: Observable<number> | undefined;
-  id: number | undefined;
-  product = new Products(1, '', '', '', '', 0, '', '');
-  constructor(private activatedRouter: ActivatedRoute, private products: ProductsService,
-              private router: Router ) { }
-  productList: any;
+
+  product: Products | undefined;
+  // productList : any;
+  productid: number | undefined;
+
+  constructor(
+    private activatedrouter: ActivatedRoute,
+    private productsservice: ProductsService,
+    private router: Router,
+  ) { }
+
+  // productList: any;
 
   ngOnInit(): void {
     // @ts-ignore
-    // this.id = this.activatedRouter.snapshot.paramMap.get('id');
-    // this.getProduct();
-   // this.id = +this.activatedRouter.snapshot.paramMap.get('id');
+    this.productid = +this.activatedrouter.snapshot.paramMap.get('id');
+    this.getDataById();
+  }
 
-   this.router.events.subscribe((val) => {
-      // @ts-ignore
-     const id = +this.activatedRouter.snapshot.paramMap.get('id');
-     this.productList = this.products.getProducts();
-     // console.log(this.productList);
-     // tslint:disable-next-line:prefer-for-of
-     for (let i = 0; i < this.productList.length; i += 1){
-       if (id === this.productList[i].id) {
-         this.product = this.productList[i];
-       }
-     }
-     console.log(this.product);
+  getDataById(){
+    this.productsservice.getDataById(this.productid).subscribe(res => {
+      this.product = res;
+      console.log(this.product);
+
     });
+  }
+
+
+}
+
+
+   // this.router.events.subscribe((val) => {
+   //    // @ts-ignore
+   //   const id = +this.activatedRouter.snapshot.paramMap.get('id');
+   //   for (let i = 0; i < this.productList.length; i += 1){
+   //     if (id === this.productList[i].id) {
+   //       this.product = this.productList[i];
+   //     }
+   //   }
+   //   console.log(this.product);
+   //  });
 
     // @ts-ignore
     // this.id$ = this.activatedRouter.paramMap.pipe(
@@ -62,7 +77,3 @@ export class DetailProdComponent implements OnInit {
    //  }
 
 
-  }
-
-
-}
