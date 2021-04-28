@@ -4,21 +4,43 @@
   <form #form="ngForm" (ngSubmit)="addingInfo()">
     <div class="form-group">
       <label>Product Name: </label>
-      <input name = "Name" [(ngModel)]="name" id="date" type="text" class="form-control"  aria-describedby="emailHelp" placeholder="Name" (change)="checktouch2(name)">
+      <input name = "Name" required minlength="3" maxlength="15" [(ngModel)]="name" id="date" type="text" class="form-control"  aria-describedby="emailHelp" placeholder="Name" (change)="checktouch2(name)" #firstname="ngModel">
       <span>Name is {{name}}</span>
+    </div>
+    <div [style.color]="'red'" *ngIf="!firstname?.valid
+                && (firstname?.dirty
+                    || firstname?.touched)">
+      Invalid  Name
+      <div *ngIf="firstname?.errors?.required">
+         Name is required
+      </div>
+      <div *ngIf="firstname?.errors?.minlength">
+         Name min length error {{firstname?.errors?.minlength?.requiredLength}}
+      </div>
+      <div *ngIf="firstname?.errors?.maxlength">
+         Name max length error {{firstname?.errors?.maxlength?.requiredLength}}
+      </div>
     </div>
 
     <div class="form-group">
       <label>id:</label>
-      <input name = "id" [(ngModel)]="id" type="number" class="form-control"  aria-describedby="emailHelp" placeholder="id">
+      <input name = "id" required [(ngModel)]="id" type="number" class="form-control"  aria-describedby="emailHelp" placeholder="id" #ID="ngModel">
       <span>id: {{id}}</span>
+    </div>
+    <div [style.color]="'red'" *ngIf="!ID?.valid
+                && (ID?.dirty
+                    || ID?.touched)">
+      Invalid  ID
+      <div *ngIf="ID?.errors?.required">
+        ID is required
+      </div>
     </div>
 
 
     <div class="form-group">
         <label>Product Type: </label>
         <br>
-        <select [(ngModel)]="type" name="first">
+        <select required [(ngModel)]="type" name="first" #ProductType="ngModel">
           <option *ngFor="let o of options">
             {{o.name}}
           </option>
@@ -26,36 +48,97 @@
         <br>
         <span>Type is {{type}}</span>
     </div>
+    <div [style.color]="'red'" *ngIf="!ProductType?.valid
+                && (ProductType?.dirty
+                    || ProductType?.touched)">
+      Invalid  ProductType
+      <div *ngIf="ProductType?.errors?.required">
+        ProductType is required
+      </div>
+    </div>
 
 
     <div class="form-group">
       <label>Description:</label>
-      <input name = "Description" [(ngModel)]="description" id="distance" type="text" class="form-control"  aria-describedby="emailHelp" placeholder="About">
+      <input name = "Description" required minlength="5" [(ngModel)]="description" id="distance" type="text" class="form-control"  aria-describedby="emailHelp" placeholder="About" #Description="ngModel">
       <span>Description: {{description}}</span>
+    </div>
+
+    <div [style.color]="'red'" *ngIf="!Description?.valid
+                && (Description?.dirty
+                    || Description?.touched)">
+      Invalid  Description
+      <div *ngIf="Description?.errors?.required">
+        Description is required
+      </div>
+      <div *ngIf="Description?.errors?.minlength">
+        Description min length error {{Description?.errors?.minlength?.requiredLength}}
+      </div>
     </div>
 
     <div class="form-group">
       <label>typedict:</label>
-      <input name = "typedict" [(ngModel)]="typedict"  type="text" class="form-control"  aria-describedby="emailHelp" placeholder="">
+      <input name = "typedict" required  minlength="3"[(ngModel)]="typedict"  type="text" class="form-control"  aria-describedby="emailHelp" placeholder="" #Typedict="ngModel">
       <span>typedict: {{typedict}}</span>
+    </div>
+    <div [style.color]="'red'" *ngIf="!Typedict?.valid
+                && (Typedict?.dirty
+                    || Typedict?.touched)">
+      Invalid  typedict
+      <div *ngIf="Typedict?.errors?.required">
+        typedict is required
+      </div>
+      <div *ngIf="Typedict?.errors?.minlength">
+        typedict min length error {{Typedict?.errors?.minlength?.requiredLength}}
+      </div>
     </div>
 
     <div class="form-group">
       <label>Price:</label>
-      <input name = "Price" [(ngModel)]="price" type="number" class="form-control"  aria-describedby="emailHelp" placeholder="0">
+      <input name = "Price" required minlength="3" maxlength="10" [(ngModel)]="price" type="number" class="form-control"  aria-describedby="emailHelp" placeholder="0" #Price="ngModel">
       <span>Price: {{price}}</span>
+    </div>
+    <div [style.color]="'red'" *ngIf="!Price?.valid
+                && (Price?.dirty
+                    || Price?.touched)">
+      Invalid  Price
+      <div *ngIf="Price?.errors?.required">
+        Price is required
+      </div>
+      <div *ngIf="Price?.errors?.minlength">
+        Price min length error {{Price?.errors?.minlength?.requiredLength}}
+      </div>
+      <div *ngIf="Price?.errors?.maxlength">
+        Price max length error {{Price?.errors?.maxlength?.requiredLength}}
+      </div>
     </div>
 
     <div class="form-group">
       <label>IMG source:</label>
-      <input name = "img" [(ngModel)]="img"  type="text" class="form-control"  aria-describedby="emailHelp" placeholder="img source">
+      <input name = "img" required [(ngModel)]="img"  type="text" class="form-control"  aria-describedby="emailHelp" placeholder="img source" #IMG="ngModel">
       <span>img source: {{img}}</span>
+    </div>
+    <div [style.color]="'red'" *ngIf="!IMG?.valid
+                && (IMG?.dirty
+                    || IMG?.touched)">
+      Invalid IMG source
+      <div *ngIf="IMG?.errors?.required">
+        IMG source is required
+      </div>
     </div>
 
     <div class="form-group">
       <label>By weight or box:</label>
-      <input name = "byweightornot" [(ngModel)]="byweightornot"  type="text" class="form-control"  aria-describedby="emailHelp" placeholder="img source">
+      <input name = "byweightornot" required [(ngModel)]="byweightornot"  type="text" class="form-control"  aria-describedby="emailHelp" placeholder="img source" #Byweightornot="ngModel">
       <span>by weight or box: {{byweightornot}}</span>
+    </div>
+    <div [style.color]="'red'" *ngIf="!Byweightornot?.valid
+                && (Byweightornot?.dirty
+                    || Byweightornot?.touched)">
+      Invalid  Byweightornot
+      <div *ngIf="Byweightornot?.errors?.required">
+        Byweightornot is required
+      </div>
     </div>
 
     <button (click)="addProduct()" type="submit" class="btn btn-primary" >Save</button>
